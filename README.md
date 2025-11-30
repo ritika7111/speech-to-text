@@ -7,7 +7,6 @@
 - `models/AzureTranscription.ts` — Mongoose schema and model for Azure transcriptions.
 - `lib/mongodb.ts` — Connection helper with simple global cache.
 - `app/transcriptions/page.tsx` — Legacy demo page for simple mock transcription flow.
-- `utils/webmToWav.ts` — Client-side WebM→WAV encoding helper (not used in server route).
 
 Key flows:
 - Upload audio in `app/page.tsx` → `POST /api/azure-stt` → Azure STT → `AzureTranscription.create(...)` → returns normalized `{ DisplayText, id }` → UI refreshes `GET /api/azure-stt?page=…`.
