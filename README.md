@@ -6,7 +6,6 @@
 - `app/api/azure-stt/route.ts` — Handles uploads (POST) to Azure STT, normalizes response, persists to MongoDB; lists recent transcriptions (GET) with pagination.
 - `models/AzureTranscription.ts` — Mongoose schema and model for Azure transcriptions.
 - `lib/mongodb.ts` — Connection helper with simple global cache.
-- `lib/azureSpeech.ts` — SDK-based transcription utility (currently mock stream input).
 - `app/transcriptions/page.tsx` — Legacy demo page for simple mock transcription flow.
 - `utils/webmToWav.ts` — Client-side WebM→WAV encoding helper (not used in server route).
 
@@ -59,7 +58,6 @@ Key flows:
   - Offload long transcriptions to background jobs; respond with a task ID and poll for completion.
   - Batch listing endpoints with cursor pagination for large datasets.
 - Azure STT usage
-  - Use the official SDK with stream inputs for robust handling and partial results.
   - Cache or deduplicate uploads by content hash to avoid repeated processing.
 - System design
   - Separate API for ingestion vs. querying; shard read services separately from write-heavy workflows.
