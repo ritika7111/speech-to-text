@@ -23,7 +23,7 @@ export async function connectDB(): Promise<Mongoose> {
 
   if (!cached.promise) {
     cached.promise = mongoose.connect(MONGODB_URI, {
-      dbName: "voiceowl",
+      dbName: "transcription",
       bufferCommands: false,
     });
   }
