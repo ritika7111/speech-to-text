@@ -1,4 +1,4 @@
-# VoiceOwl Azure STT — Project Overview
+# Azure STT — Project Overview
 
 ## Code Structure
 
